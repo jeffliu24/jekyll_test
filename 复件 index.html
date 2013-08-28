@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Jekyll test : This is my first time to pages " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Jekyll test</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jeffliu24/jekyll_test">View on GitHub</a>
+
+          <h1 id="project_title">Jekyll test</h1>
+          <h2 id="project_tagline">This is my first time to pages </h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/jeffliu24/jekyll_test/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/jeffliu24/jekyll_test/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="welcome-to-my-pages" class="anchor" href="#welcome-to-my-pages"><span class="octicon octicon-link"></span></a>Welcome to My Pages.</h3>
+
+<p>This is my first time to Git-Pages.
+Now I want to test this effect.I paste a C code above:</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int sort(int a[10])
+{
+    int i,j;
+
+    for (i=0; i&lt;10; i++)
+    {
+        for (j=9; j&gt;i; j--)
+        {
+            if (a[i] &lt; a[j])
+            {
+                a[i] = a[i] + a[j];
+                a[j] = a[i] - a[j];
+                a[i] = a[i] - a[j];
+            }
+        }
+    }
+
+    return 0;
+}
+
+int sort_n(int a[], int n)
+{
+    int i,j;
+
+    for (i=0; i&lt;n; i++)
+    {
+        for (j=n-1; j&gt;i; j--)
+        {
+            if (a[i] &lt; a[j])
+            {
+                a[i] = a[i] + a[j];
+                a[j] = a[i] - a[j];
+                a[i] = a[i] - a[j];
+            }
+        }
+    }
+
+    return 0;
+}
+
+int sort_n_type(int a[], int n, char style)
+{
+    int i,j;
+
+    if (style != 'a' &amp;&amp; style !='d')
+    {
+        printf("The sort style [%c] error!", style);
+        return -1;
+    }
+
+    if (style == 'a')
+    {
+        int i,j;
+
+        for (i=0; i&lt;n; i++)
+        {
+            for (j=n-1; j&gt;i; j--)
+            {
+                if (a[i] &gt; a[j])
+                {
+                    a[i] = a[i] + a[j];
+                    a[j] = a[i] - a[j];
+                    a[i] = a[i] - a[j];
+                }
+            }
+        }
+    }
+    else
+    {
+        int i,j;
+
+        for (i=0; i&lt;n; i++)
+        {
+            for (j=n-1; j&gt;i; j--)
+            {
+                if (a[i] &lt; a[j])
+                {
+                    a[i] = a[i] + a[j];
+                    a[j] = a[i] - a[j];
+                    a[i] = a[i] - a[j];
+                }
+            }
+        }
+    }
+
+    return 0;
+}
+
+static void print(int a[], int n)
+{
+    int i;
+
+    printf("---------\n");
+
+    for (i=0; i&lt;n; i++)
+    {
+        printf("No.%d element is %d\n", i+1, a[i]);
+    }
+}
+
+int main(int argc, char *argv[])
+{
+    int a[]={93, 91, 93, 95, 96, 98, 99, 62, 78, 82, 69, 99};
+    int b[]={93, 91, 93, 95, 96, 98, 99, 62, 78, 82};
+    int n = sizeof(a)/sizeof(int);
+
+    /* print a[] */
+    print(a, n);
+
+    /* use sort */
+    if (!sort(a))
+        print(a,n);
+
+    /* use sort_n */
+    if (!sort_n(a, n))
+        print(a, n);
+
+    /* use sort_n_type by 'a' */
+    if (!sort_n_type(a, n, 'a'))
+        print(a, n);
+
+    /* use sort_n_type by 'd' */
+    if (!sort_n_type(a, n, 'd'))
+        print(a, n);
+
+    return 0;
+}
+</code></pre>
+
+<p>Let`s see the result.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Jekyll test maintained by <a href="https://github.com/jeffliu24">jeffliu24</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
